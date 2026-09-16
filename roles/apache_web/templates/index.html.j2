@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Server Info — {{ ansible_hostname }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+        h1 { color: #2c3e20; }
+        table { border-collapse: collapse; margin-top: 20px; }
+        td, th { border: 1px solid #ccc; padding: 10px 20px; }
+        th { background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Информация о сервере: {{ ansible_hostname }}</h1>
+    <table>
+        <tr><th>Параметр</th><th>Значение</th></tr>
+        <tr><td>Hostname</td><td>{{ ansible_hostname }}</td></tr>
+        <tr><td>IP-адрес</td><td>{{ ansible_default_ipv4.address }}</td></tr>
+        <tr><td>CPU (ядра)</td><td>{{ ansible_processor_vcpus }}</td></tr>
+        <tr><td>RAM (МБ)</td><td>{{ ansible_memtotal_mb }}</td></tr>
+        <tr><td>Первый HDD</td><td>{{ ansible_devices[ansible_devices.keys() | list | first].size | default('N/A') }}</td></tr>
+    </table>
+</body>
+</html>

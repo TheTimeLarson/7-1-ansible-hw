@@ -1,0 +1,17 @@
+---
+- name: Advanced motd with facts
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Write dynamic motd
+      ansible.builtin.copy:
+        dest: /etc/motd
+        mode: "0644"
+        content: |
+          ====================================================
+          Добро пожаловать на сервер!
+          IP-адрес: {{ ansible_default_ipv4.address }}
+          Hostname: {{ ansible_hostname }}
+          Хорошего дня, системный администратор!
+          ====================================================

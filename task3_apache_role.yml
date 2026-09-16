@@ -1,0 +1,7 @@
+---
+- name: Configure web server with role
+  hosts: web
+  become: true
+
+  roles:
+    - apache_web

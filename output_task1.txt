@@ -1,0 +1,6 @@
+
+PLAY [Download and unpack Kafka archive] ***************************************
+skipping: no hosts matched
+
+PLAY RECAP *********************************************************************
+

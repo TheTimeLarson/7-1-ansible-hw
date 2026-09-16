@@ -1,0 +1,6 @@
+
+PLAY [Configure web server with role] ******************************************
+skipping: no hosts matched
+
+PLAY RECAP *********************************************************************
+

@@ -1,0 +1,14 @@
+---
+- name: Change motd greeting
+  hosts: web
+  become: true
+
+  vars:
+    greeting: "Welcome to my Ansible-managed server!"
+
+  tasks:
+    - name: Write custom motd
+      ansible.builtin.copy:
+        content: "{{ greeting }}\n"
+        dest: /etc/motd
+        mode: "0644"
